@@ -213,7 +213,7 @@ Review the output parameters that you can access after your resource is created.
 | `expires_on` | Date | The date the certificate expires. |
 | `id` | String | The unique identifier of the certificate in the format `<cluster_name_id>/<secret_name>`.
 | `issuer_name` | String | The name of the issuer of the certificate. | 
-|`status`|String| The Status of the secret. Testing the status of new updates geetha. |
+|`status`|String| The Status of the secret. Testing the status of new updates geetha sm. |
 
 ### Import
 {: #container-alb-cert-import}
