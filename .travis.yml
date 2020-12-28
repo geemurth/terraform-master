@@ -1,0 +1,28 @@
+notifications:
+  email:
+    recipients:
+      - cfsdocs@us.ibm.com
+    on_failure: never # default: always
+    on_success: never # default: change
+
+provider: script
+
+matrix:
+  include:
+   - language: python
+     python: 3.7
+     env:
+       - name="Doctopus upstream repo checks"
+     script:
+       - export branch=pre-release
+       - bash <(curl -O -u ${GHE_TOKEN}:x-oauth-basic -sL https://github.ibm.com/cloud-docs-automation/custom-tagging/archive/$branch.zip)
+       - |
+          if unzip -q -o $branch.zip; then
+            echo "Cloned repo unzipped."
+          else
+            echo $? 
+            printf "ERROR: The custom-tagging repo could not be cloned. The GHE_TOKEN might be expired."
+            travis_terminate 1
+          fi
+       - rm -f ${TRAVIS_BUILD_DIR}/.travis.log*
+       - bash ${TRAVIS_BUILD_DIR}/*custom-tagging-*/build_start.sh | tee -a ${TRAVIS_BUILD_DIR}/.travis.log ; travis_terminate ${PIPESTATUS[0]}

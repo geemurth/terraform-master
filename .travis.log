@@ -1,0 +1,463 @@
+
+
+
+-------------------------------------------------------------
+
+
+DOCTOPUS CUSTOM TAGGING SCRIPT
+
+
+-------------------------------------------------------------
+
+
+travis_custom_tagging.sh INFO: TRAVIS_BRANCH: master
+travis_custom_tagging.sh INFO: TRAVIS_BUILD_NUMBER: 683
+travis_custom_tagging.sh INFO: TRAVIS_BUILD_WEB_URL: https:///alchemy-writers/terraform/builds/29098835
+travis_custom_tagging.sh INFO: TRAVIS_COMMIT: https://github.ibm.com/alchemy-writers/terraform/commit/ddd1c2a7589584cc685fc5b3995b9b09029a9492
+travis_custom_tagging.sh INFO: TRAVIS_COMMIT_MESSAGE: Update schemastics-data-sources.md
+travis_custom_tagging.sh INFO: LOG FILE: https://github.ibm.com/alchemy-writers/terraform/blob/master/.travis.log
+
+
+-------------------------------------------------------------
+STEP 1 INSTALL PYTHON REQUIREMENTS
+-------------------------------------------------------------
+
+Collecting GitPython (from -r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/d3/2f/6a366d56c9b1355b0880be9ea66b166cb3536392638d8d91413ec66305ad/GitPython-3.1.0-py3-none-any.whl (450kB)
+Collecting pytz (from -r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl (509kB)
+Collecting requests (from -r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/1a/70/1935c770cb3be6e3a8b78ced23d7e0f3b187f5cbfab4749523ed65d7c9b1/requests-2.23.0-py2.py3-none-any.whl (58kB)
+Collecting gitdb<5,>=4.0.1 (from GitPython->-r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/1e/f5/8f84b3bf9d94bdf2454a302f2fa375832b53660ea532586b8a55ff16ae9a/gitdb-4.0.2-py3-none-any.whl (63kB)
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 (from requests->-r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/e8/74/6e4f91745020f967d09332bb2b8b9b10090957334692eb88ea4afe91b77f/urllib3-1.25.8-py2.py3-none-any.whl (125kB)
+Collecting chardet<4,>=3.0.2 (from requests->-r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+Requirement already satisfied: certifi>=2017.4.17 in /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages (from requests->-r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 3)) (2018.11.29)
+Collecting idna<3,>=2.5 (from requests->-r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 3))
+  Downloading https://files.pythonhosted.org/packages/89/e3/afebe61c546d18fb1709a61bee788254b40e736cff7271c7de5de2dc4128/idna-2.9-py2.py3-none-any.whl (58kB)
+Collecting smmap<4,>=3.0.1 (from gitdb<5,>=4.0.1->GitPython->-r /home/travis/build/alchemy-writers/terraform/custom-tagging-2.48/requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/35/d2/27777ab463cd44842c78305fa8097dfba0d94768abbb7e1c4d88f1fa1a0b/smmap-3.0.1-py2.py3-none-any.whl
+Installing collected packages: smmap, gitdb, GitPython, pytz, urllib3, chardet, idna, requests
+Successfully installed GitPython-3.1.0 chardet-3.0.4 gitdb-4.0.2 idna-2.9 pytz-2019.3 requests-2.23.0 smmap-3.0.1 urllib3-1.25.8
+
+
+-------------------------------------------------------------
+STEP 2 RETRIEVE ENVIRONMENT VARIABLES
+-------------------------------------------------------------
+
+INFO: Checking for an environment variable file for this repo here: https://github.ibm.com/cloud-docs-automation/environment-variables
+INFO: The environment variables repo contents were downloaded.
+INFO: Unzipping the environment-variables master.zip
+travis_custom_tagging.sh INFO: Found environment variables for this service in /home/travis/build/alchemy-writers/terraform/*environment-variables*/services/terraform.sh
+
+INFO: Environment variables for this service:
+travis_custom_tagging.sh INFO: GITHUB_REPO: terraform
+travis_custom_tagging.sh INFO: SOURCE_ORG_REPO: alchemy-writers/terraform
+travis_custom_tagging.sh INFO: CLI_REPO: 
+travis_custom_tagging.sh INFO: CLI_REPO_FILE: 
+travis_custom_tagging.sh INFO: SUB_REPO: 
+INFO: Setting the builder variable to travis. 
+
+
+
+-------------------------------------------------------------
+STEP 3 CHECK JSON STRUCTURE IN CONREF FILES
+-------------------------------------------------------------
+
+(jsonCheck.py-line 47-<module>()) INFO: conrefs/conrefs.json does not exist.
+(jsonCheck.py-line 47-<module>()) INFO: conrefs/conrefs.txt does not exist.
+(jsonCheck.py-line 47-<module>()) INFO: feature-flags.json does not exist.
+
+
+-------------------------------------------------------------
+STEP 4 CONFIGURE GITHUB GLOBALS
+-------------------------------------------------------------
+
+travis_custom_tagging.sh INFO: Setting global config user email: cfsdocs@us.ibm.com
+travis_custom_tagging.sh INFO: Setting global config user name: CFS Docs 
+
+
+-------------------------------------------------------------
+STEP 5 RUN CUSTOM TAGGING PYTHON SCRIPT
+-------------------------------------------------------------
+
+travis_custom_tagging.sh INFO: Working directory: /home/travis/build/alchemy-writers/terraform
+(setup.py-line 153-<module>()) INFO: Imported errorHandling/loggingConfig.py file.
+(setup.py-line 156-<module>()) INFO: Imported config/__init__.py file.
+(setup.py-line 162-<module>()) INFO: Build began: 2020-04-07 08:04:28.289989-04:00
+(setup.py-line 163-<module>()) INFO: Timezone: US/Eastern
+
+(setup.py-line 165-<module>()) INFO: Variables pulled into the script:
+(setup.py-line 166-<module>()) INFO: TRAVIS_BUILD_DIR: /home/travis/build/alchemy-writers/terraform
+(setup.py-line 167-<module>()) INFO: GITHUB_REPO: terraform
+(setup.py-line 168-<module>()) INFO: SOURCE_ORG_REPO: alchemy-writers/terraform
+(setup.py-line 169-<module>()) INFO: CLI_REPO: 
+(setup.py-line 170-<module>()) INFO: CLI_REPO_FILE: 
+(setup.py-line 171-<module>()) INFO: SUB_REPO: None
+(setup.py-line 172-<module>()) INFO: SUB_REPO_UPSTREAM: None
+(setup.py-line 173-<module>()) INFO: GITHUB_ORG: cloud-docs
+
+(setup.py-line 175-<module>()) INFO: Common variables...
+(setup.py-line 176-<module>()) INFO: builder: travis
+(setup.py-line 180-<module>()) DEBUG: conref_phrases_file: Not set
+
+(setup.py-line 184-<module>()) INFO: Cleanup be done on the following filetypes:
+(setup.py-line 185-<module>()) INFO: Text files: ['.md', 'toc', '.html', 'ignoreLinks.txt']
+(setup.py-line 186-<module>()) INFO: Image files: ['.ai', '.png', '.jpg', '.gif', '.svg', '.jpeg', '.psd']
+
+
+(previousCommitInfo.py-line 14-previousCommitInfo()) INFO: ---------------------------------------------------------
+(previousCommitInfo.py-line 15-previousCommitInfo()) INFO: SOURCE
+(previousCommitInfo.py-line 16-previousCommitInfo()) INFO: --------------------------------------------------------
+
+
+(previousCommitInfo.py-line 180-previousCommitInfo()) INFO: Previous commit ID: 39969f8e38f685f670fe54cd5b32389071d13589
+(previousCommitInfo.py-line 181-previousCommitInfo()) INFO: Current commit ID: ddd1c2a7589584cc685fc5b3995b9b09029a9492
+(previousCommitInfo.py-line 182-previousCommitInfo()) INFO: Current commit description: NADINE SPIES: Update schemastics-data-sources.md
+
+(previousCommitInfo.py-line 188-previousCommitInfo()) INFO: These were the files changed since the last commit that a Travis build ran on:
+(previousCommitInfo.py-line 190-previousCommitInfo()) INFO: provider/schemastics-data-sources.md
+(setup.py-line 22-perBranchCall()) INFO: 
+
+
+
+(setup.py-line 23-perBranchCall()) INFO: ---------------------------------------------------------
+
+(setup.py-line 24-perBranchCall()) INFO: MAIN_STAGING
+
+(setup.py-line 25-perBranchCall()) INFO: ---------------------------------------------------------
+
+
+(setup.py-line 56-__init__()) INFO: Working directory: /home/travis/build/alchemy-writers/terraform/main_staging
+(clone.py-line 22-clone()) INFO: 
+
+
+(clone.py-line 23-clone()) INFO: ----------------------------------
+(clone.py-line 24-clone()) INFO: Cloning https://github.ibm.comcloud-docs/terraform.git, draft branch...
+(clone.py-line 25-clone()) INFO: ----------------------------------
+(clone.py-line 85-clone()) INFO: Success! terraform, draft branch cloned via the CLI.
+(tagListCompile.py-line 13-tagListCompile()) DEBUG: 
+
+
+(tagListCompile.py-line 14-tagListCompile()) DEBUG: ----------------------------------
+(tagListCompile.py-line 15-tagListCompile()) DEBUG: Tag list and display settings for main_staging:
+(tagListCompile.py-line 16-tagListCompile()) DEBUG: ----------------------------------
+(tagListCompile.py-line 100-tagListCompile()) DEBUG: No feature flag to work with: /home/travis/build/alchemy-writers/terraform/feature-flags.json
+(tagListCompile.py-line 102-tagListCompile()) DEBUG: 
+
+(tagListCompile.py-line 103-tagListCompile()) DEBUG: Tag list for main_staging:
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: staging:show
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: prod:hide
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: draft:show
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: publish:hide
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: hidden:hide
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: all:show
+(sourceFilesForThisBranch.py-line 36-sourceFilesForThisBranch()) INFO: 
+
+
+(sourceFilesForThisBranch.py-line 37-sourceFilesForThisBranch()) INFO: ----------------------------------
+(sourceFilesForThisBranch.py-line 38-sourceFilesForThisBranch()) INFO: Source file list for main_staging:
+(sourceFilesForThisBranch.py-line 39-sourceFilesForThisBranch()) INFO: ----------------------------------
+(sourceFilesForThisBranch.py-line 266-sourceFilesForThisBranch()) INFO: 
+(sourceFilesForThisBranch.py-line 267-sourceFilesForThisBranch()) INFO: Revised source file list for main_staging:
+(sourceFilesForThisBranch.py-line 269-sourceFilesForThisBranch()) INFO: provider/schemastics-data-sources.md
+(cleanupEachFile.py-line 76-cleanupEachFile()) DEBUG: 
+
+
+(cleanupEachFile.py-line 77-cleanupEachFile()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 78-cleanupEachFile()) DEBUG: Working with conref files for main_staging:
+(cleanupEachFile.py-line 79-cleanupEachFile()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/cli-install.md for main_staging:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/cli-install.md,folderPath=/conrefs/,fileName=cli-install.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 29-fileCleanUpLoop()) DEBUG: First anchor: install_cli
+(tagCheck.py-line 11-tagCheck()) DEBUG: Checking tags in conrefs/cli-install.md...
+(tagRemoval.py-line 11-tagRemoval()) DEBUG: Handling tags in conrefs/cli-install.md...
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/cli-install.md...
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_staging/conrefs/cli-install.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/provider-param-data-source.md for main_staging:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/provider-param-data-source.md,folderPath=/conrefs/,fileName=provider-param-data-source.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/provider-param-data-source.md...
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_staging/conrefs/provider-param-data-source.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/provider-param-resource.md for main_staging:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/provider-param-resource.md,folderPath=/conrefs/,fileName=provider-param-resource.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/provider-param-resource.md...
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_staging/conrefs/provider-param-resource.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/terraform_sitemap.md for main_staging:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/terraform_sitemap.md,folderPath=/conrefs/,fileName=terraform_sitemap.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/terraform_sitemap.md...
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_staging/conrefs/terraform_sitemap.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/white-space.md for main_staging:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/white-space.md,folderPath=/conrefs/,fileName=white-space.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/white-space.md...
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_staging/conrefs/white-space.md
+(cleanupEachFile.py-line 106-cleanupEachFile()) DEBUG: 
+
+
+(cleanupEachFile.py-line 107-cleanupEachFile()) DEBUG: ----------------------------------
+
+(cleanupEachFile.py-line 108-cleanupEachFile()) DEBUG: Working with source file list for main_staging:
+
+(cleanupEachFile.py-line 109-cleanupEachFile()) DEBUG: ----------------------------------
+
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with provider/schemastics-data-sources.md for main_staging:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=provider/schemastics-data-sources.md,folderPath=/provider/,fileName=schemastics-data-sources.md,fileStatus=modified,fileNamePrevious=None)
+(cleanupEachFile.py-line 29-fileCleanUpLoop()) DEBUG: First anchor: schematics-data-sources
+(wholeFileConrefs.py-line 17-wholeFileConrefs()) DEBUG: Replaced {[provider-param-data-source.md]}.
+(tagCheck.py-line 11-tagCheck()) DEBUG: Checking tags in provider/schemastics-data-sources.md...
+(tagRemoval.py-line 11-tagRemoval()) DEBUG: Handling tags in provider/schemastics-data-sources.md...
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in provider/schemastics-data-sources.md...
+(metadata.py-line 23-metadata()) DEBUG: Replaced [{CURRENT_YEAR}] with: 2020
+(metadata.py-line 27-metadata()) DEBUG: Replaced [{LAST_UPDATED_DATE}] with: 2020-04-07
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_staging/provider/schemastics-data-sources.md
+(imagesCheck.py-line 104-imagesCheck()) DEBUG: 
+
+
+(imagesCheck.py-line 105-imagesCheck()) DEBUG: ----------------------------------
+(imagesCheck.py-line 106-imagesCheck()) DEBUG: Checking for images that should be copied to main_staging:
+(imagesCheck.py-line 107-imagesCheck()) DEBUG: ----------------------------------
+(imagesCheck.py-line 54-copyImage()) DEBUG: images/idea.png is outdated in main_staging.
+(imagesCheck.py-line 59-copyImage()) DEBUG: images/idea.png: Copying updates
+(imagesCheck.py-line 64-copyImage()) DEBUG: images/idea.png: Already exists and is current
+(setup.py-line 130-__init__()) DEBUG: Deleted: /home/travis/build/alchemy-writers/terraform/main_staging/conrefs
+(pushUpdatedFiles.py-line 19-pushUpdatedFiles()) INFO: 
+
+
+(pushUpdatedFiles.py-line 20-pushUpdatedFiles()) INFO: ----------------------------------
+(pushUpdatedFiles.py-line 21-pushUpdatedFiles()) INFO: Pushing changes to main_staging:
+(pushUpdatedFiles.py-line 22-pushUpdatedFiles()) INFO: ----------------------------------
+(pushUpdatedFiles.py-line 32-pushUpdatedFiles()) INFO: Current directory: /home/travis/build/alchemy-writers/terraform/main_staging
+(pushUpdatedFiles.py-line 64-pushUpdatedFiles()) INFO: Adding all files to be committed...
+(pushUpdatedFiles.py-line 151-pushUpdatedFiles()) INFO: Status:
+(pushUpdatedFiles.py-line 152-pushUpdatedFiles()) INFO: M  provider/schemastics-data-sources.md
+(pushUpdatedFiles.py-line 156-pushUpdatedFiles()) INFO: Commiting the changes...
+(pushUpdatedFiles.py-line 161-pushUpdatedFiles()) INFO: Merging the commit...
+(pushUpdatedFiles.py-line 163-pushUpdatedFiles()) INFO: Pushing the changes to the local branch...
+(pushUpdatedFiles.py-line 166-pushUpdatedFiles()) INFO: Pushing to the draft branch...
+(setup.py-line 22-perBranchCall()) INFO: 
+
+
+
+(setup.py-line 23-perBranchCall()) INFO: ---------------------------------------------------------
+
+(setup.py-line 24-perBranchCall()) INFO: MAIN_PROD
+
+(setup.py-line 25-perBranchCall()) INFO: ---------------------------------------------------------
+
+
+(setup.py-line 56-__init__()) INFO: Working directory: /home/travis/build/alchemy-writers/terraform/main_prod
+(clone.py-line 22-clone()) INFO: 
+
+
+(clone.py-line 23-clone()) INFO: ----------------------------------
+(clone.py-line 24-clone()) INFO: Cloning https://github.ibm.comcloud-docs/terraform.git, next-prod-push branch...
+(clone.py-line 25-clone()) INFO: ----------------------------------
+(clone.py-line 50-clone()) INFO: Creating the next-prod-push branch...
+(clone.py-line 85-clone()) INFO: Success! terraform, next-prod-push branch cloned via the CLI.
+(tagListCompile.py-line 13-tagListCompile()) DEBUG: 
+
+
+(tagListCompile.py-line 14-tagListCompile()) DEBUG: ----------------------------------
+(tagListCompile.py-line 15-tagListCompile()) DEBUG: Tag list and display settings for main_prod:
+(tagListCompile.py-line 16-tagListCompile()) DEBUG: ----------------------------------
+(tagListCompile.py-line 100-tagListCompile()) DEBUG: No feature flag to work with: /home/travis/build/alchemy-writers/terraform/feature-flags.json
+(tagListCompile.py-line 102-tagListCompile()) DEBUG: 
+
+(tagListCompile.py-line 103-tagListCompile()) DEBUG: Tag list for main_prod:
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: prod:show
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: staging:hide
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: publish:show
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: draft:hide
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: hidden:hide
+(tagListCompile.py-line 105-tagListCompile()) DEBUG: all:show
+(sourceFilesForThisBranch.py-line 36-sourceFilesForThisBranch()) INFO: 
+
+
+(sourceFilesForThisBranch.py-line 37-sourceFilesForThisBranch()) INFO: ----------------------------------
+(sourceFilesForThisBranch.py-line 38-sourceFilesForThisBranch()) INFO: Source file list for main_prod:
+(sourceFilesForThisBranch.py-line 39-sourceFilesForThisBranch()) INFO: ----------------------------------
+(sourceFilesForThisBranch.py-line 266-sourceFilesForThisBranch()) INFO: 
+(sourceFilesForThisBranch.py-line 267-sourceFilesForThisBranch()) INFO: Revised source file list for main_prod:
+(sourceFilesForThisBranch.py-line 269-sourceFilesForThisBranch()) INFO: provider/schemastics-data-sources.md
+(cleanupEachFile.py-line 76-cleanupEachFile()) DEBUG: 
+
+
+(cleanupEachFile.py-line 77-cleanupEachFile()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 78-cleanupEachFile()) DEBUG: Working with conref files for main_prod:
+(cleanupEachFile.py-line 79-cleanupEachFile()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/cli-install.md for main_prod:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/cli-install.md,folderPath=/conrefs/,fileName=cli-install.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 29-fileCleanUpLoop()) DEBUG: First anchor: install_cli
+(tagCheck.py-line 11-tagCheck()) DEBUG: Checking tags in conrefs/cli-install.md...
+(tagRemoval.py-line 11-tagRemoval()) DEBUG: Handling tags in conrefs/cli-install.md...
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/cli-install.md...
+(metadata.py-line 59-metadata()) DEBUG: Removing comments.
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_prod/conrefs/cli-install.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/provider-param-data-source.md for main_prod:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/provider-param-data-source.md,folderPath=/conrefs/,fileName=provider-param-data-source.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/provider-param-data-source.md...
+(metadata.py-line 59-metadata()) DEBUG: Removing comments.
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_prod/conrefs/provider-param-data-source.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/provider-param-resource.md for main_prod:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/provider-param-resource.md,folderPath=/conrefs/,fileName=provider-param-resource.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/provider-param-resource.md...
+(metadata.py-line 59-metadata()) DEBUG: Removing comments.
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_prod/conrefs/provider-param-resource.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/terraform_sitemap.md for main_prod:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/terraform_sitemap.md,folderPath=/conrefs/,fileName=terraform_sitemap.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/terraform_sitemap.md...
+(metadata.py-line 59-metadata()) DEBUG: Removing comments.
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_prod/conrefs/terraform_sitemap.md
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with conrefs/white-space.md for main_prod:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=conrefs/white-space.md,folderPath=/conrefs/,fileName=white-space.md,fileStatus=None,fileNamePrevious=None)
+(cleanupEachFile.py-line 31-fileCleanUpLoop()) DEBUG: No anchors in the page.
+(tagRemoval.py-line 75-tagRemoval()) DEBUG: No tags in this file to handle.
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in conrefs/white-space.md...
+(metadata.py-line 59-metadata()) DEBUG: Removing comments.
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_prod/conrefs/white-space.md
+(cleanupEachFile.py-line 106-cleanupEachFile()) DEBUG: 
+
+
+(cleanupEachFile.py-line 107-cleanupEachFile()) DEBUG: ----------------------------------
+
+(cleanupEachFile.py-line 108-cleanupEachFile()) DEBUG: Working with source file list for main_prod:
+
+(cleanupEachFile.py-line 109-cleanupEachFile()) DEBUG: ----------------------------------
+
+(cleanupEachFile.py-line 14-fileCleanUpLoop()) DEBUG: 
+
+
+(cleanupEachFile.py-line 15-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 16-fileCleanUpLoop()) DEBUG: Working with provider/schemastics-data-sources.md for main_prod:
+(cleanupEachFile.py-line 17-fileCleanUpLoop()) DEBUG: ----------------------------------
+(cleanupEachFile.py-line 18-fileCleanUpLoop()) DEBUG: (folderAndFile=provider/schemastics-data-sources.md,folderPath=/provider/,fileName=schemastics-data-sources.md,fileStatus=modified,fileNamePrevious=None)
+(cleanupEachFile.py-line 29-fileCleanUpLoop()) DEBUG: First anchor: schematics-data-sources
+(wholeFileConrefs.py-line 17-wholeFileConrefs()) DEBUG: Replaced {[provider-param-data-source.md]}.
+(tagCheck.py-line 11-tagCheck()) DEBUG: Checking tags in provider/schemastics-data-sources.md...
+(tagRemoval.py-line 11-tagRemoval()) DEBUG: Handling tags in provider/schemastics-data-sources.md...
+(metadata.py-line 9-metadata()) DEBUG: Handling metadata in provider/schemastics-data-sources.md...
+(metadata.py-line 23-metadata()) DEBUG: Replaced [{CURRENT_YEAR}] with: 2020
+(metadata.py-line 27-metadata()) DEBUG: Replaced [{LAST_UPDATED_DATE}] with: 2020-04-07
+(metadata.py-line 59-metadata()) DEBUG: Removing comments.
+(writeResult.py-line 28-writeResult()) DEBUG: Wrote: /home/travis/build/alchemy-writers/terraform/main_prod/provider/schemastics-data-sources.md
+(imagesCheck.py-line 104-imagesCheck()) DEBUG: 
+
+
+(imagesCheck.py-line 105-imagesCheck()) DEBUG: ----------------------------------
+(imagesCheck.py-line 106-imagesCheck()) DEBUG: Checking for images that should be copied to main_prod:
+(imagesCheck.py-line 107-imagesCheck()) DEBUG: ----------------------------------
+(imagesCheck.py-line 54-copyImage()) DEBUG: images/idea.png is outdated in main_prod.
+(imagesCheck.py-line 59-copyImage()) DEBUG: images/idea.png: Copying updates
+(imagesCheck.py-line 64-copyImage()) DEBUG: images/idea.png: Already exists and is current
+(setup.py-line 130-__init__()) DEBUG: Deleted: /home/travis/build/alchemy-writers/terraform/main_prod/conrefs
+(pushUpdatedFiles.py-line 19-pushUpdatedFiles()) INFO: 
+
+
+(pushUpdatedFiles.py-line 20-pushUpdatedFiles()) INFO: ----------------------------------
+(pushUpdatedFiles.py-line 21-pushUpdatedFiles()) INFO: Pushing changes to main_prod:
+(pushUpdatedFiles.py-line 22-pushUpdatedFiles()) INFO: ----------------------------------
+(pushUpdatedFiles.py-line 32-pushUpdatedFiles()) INFO: Current directory: /home/travis/build/alchemy-writers/terraform/main_prod
+(pushUpdatedFiles.py-line 64-pushUpdatedFiles()) INFO: Adding all files to be committed...
+(pushUpdatedFiles.py-line 151-pushUpdatedFiles()) INFO: Status:
+(pushUpdatedFiles.py-line 152-pushUpdatedFiles()) INFO: M  provider/schemastics-data-sources.md
+(pushUpdatedFiles.py-line 156-pushUpdatedFiles()) INFO: Commiting the changes...
+(pushUpdatedFiles.py-line 161-pushUpdatedFiles()) INFO: Merging the commit...
+(pushUpdatedFiles.py-line 163-pushUpdatedFiles()) INFO: Pushing the changes to the local branch...
+(pushUpdatedFiles.py-line 166-pushUpdatedFiles()) INFO: Pushing to the next-prod-push branch...
+(pushUpdatedFiles.py-line 192-pushUpdatedFiles()) INFO: Creating pull request for prod commit ddd1c2a7589584cc685fc5b3995b9b09029a9492
+(pushUpdatedFiles.py-line 193-pushUpdatedFiles()) INFO: SUCCESS!
+(pushUpdatedCommitID.py-line 12-pushUpdatedCommitID()) INFO: 
+
+
+
+(pushUpdatedCommitID.py-line 13-pushUpdatedCommitID()) INFO: -------------------------------------------------------------
+(pushUpdatedCommitID.py-line 14-pushUpdatedCommitID()) INFO: STEP 6 UPDATE .travis_commit.txt in the upstream repo
+(pushUpdatedCommitID.py-line 15-pushUpdatedCommitID()) INFO: -------------------------------------------------------------
+(pushUpdatedCommitID.py-line 45-pushUpdatedCommitID()) INFO: Updated https://github.ibm.com/alchemy-writers/terraform/blob/master/.travis_commit.txt.
+(pushUpdatedCommitID.py-line 46-pushUpdatedCommitID()) INFO: 39969f8e38f685f670fe54cd5b32389071d13589 -> ddd1c2a7589584cc685fc5b3995b9b09029a9492.
+(pushUpdatedCommitID.py-line 47-pushUpdatedCommitID()) INFO: Success!
+
+
+
+(setup.py-line 311-<module>()) INFO: -------------------------------------------------------------
+(setup.py-line 312-<module>()) INFO: STEP 7 CALCULATE TIME TO RUN
+(setup.py-line 313-<module>()) INFO: -------------------------------------------------------------
+(setup.py-line 314-<module>()) INFO: Build ended: 2020-04-07 08:04:44.535690-04:00
+(setup.py-line 318-<module>()) INFO: Took 00 minutes 16.26 seconds for this build to run.
+
+
+
+(pushUpdatedLogFile.py-line 18-pushUpdatedLogFile()) INFO: -------------------------------------------------------------
+(pushUpdatedLogFile.py-line 19-pushUpdatedLogFile()) INFO: STEP 8 UPDATE .travis.log in the upstream repo
+(pushUpdatedLogFile.py-line 20-pushUpdatedLogFile()) INFO: -------------------------------------------------------------
+(pushUpdatedLogFile.py-line 25-pushUpdatedLogFile()) DEBUG: Log file: https://github.ibm.com/alchemy-writers/terraform/blob/master/.travis.log
