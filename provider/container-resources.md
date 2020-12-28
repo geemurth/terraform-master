@@ -197,7 +197,7 @@ Review the input parameters that you can specify for your resource.
 | `region` | String | Optional | The {{site.data.keyword.cloud_notm}} region where your SSL certificate is stored. | No |
 | `secret_name` | String | Required | The name of the ALB certificate secret. | Yes |
 |`namespace`|String| Optional| The namespace in which the secret is created. Default value is `ibm-cert-store`.|
-|`persistence`|Bool |Optional| Persist the secret data in your cluster. If the secret is later deleted from the CLI or OpenShift web console, the secret is automatically re-created in your cluster.|
+|`persistence`|Bool | Optional | Persist the secret data in your cluster. If the secret is later deleted from the CLI or OpenShift web console, the secret is automatically re-created in your cluster. |
 
 ### Output parameters
 {: #container-alb-cert-output}
@@ -213,7 +213,7 @@ Review the output parameters that you can access after your resource is created.
 | `expires_on` | Date | The date the certificate expires. |
 | `id` | String | The unique identifier of the certificate in the format `<cluster_name_id>/<secret_name>`.
 | `issuer_name` | String | The name of the issuer of the certificate. | 
-|`status`|String| The Status of the secret.|
+|`status`|String| The Status of the secret. Testing the status of new updates geetha. |
 
 ### Import
 {: #container-alb-cert-import}
